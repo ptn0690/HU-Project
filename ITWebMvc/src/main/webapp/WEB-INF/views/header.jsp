@@ -1,5 +1,6 @@
 
 <%@page import="com.it.spring.model.Userz"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
 Userz userz = null;
     if((Userz)session.getAttribute("users")!=null){
