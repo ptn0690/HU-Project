@@ -68,33 +68,33 @@
               %>
                <div class="box">
                 <div class="inside png">
-                <h2>Payment</h2>
+                <h2>Thanh Toán</h2>
                 <p>Bạn có cần phải điền thông tin liên lạc trong mẫu dưới.</p>
-                <form action="ReceiptServlet" method="post">
+                <form action="${pageContext.request.contextPath}/receipt/create" method="post">
                         <fieldset>
                         <div class="field">
-                        <label>Full name:</label>
+                        <label>Tên đầy đủ:</label>
                         <input type="text" value="">
                         </div>
                         <div class="field">
-                        <label>Phone:</label>
+                        <label>Điện thoại:</label>
                         <input type="text" value="">
                         </div>
 						<div class="field">
-                        <label>Address:</label>
+                        <label>Địa chỉ:</label>
                         <input type="text" value="">
                         </div>
                         <div class="field">
-                        <label>City:</label>
+                        <label>Thành phố:</label>
                         <input type="text" value="">
                         </div>
 
                         <div class="field">
-                        <label>Receiving address:<span style="color:red">*</span></label>
+                        <label>Địa chỉ nhận:<span style="color:red">*</span></label>
                         <input type="text"  name="receivingAddress"/>
                         </div>
                         <div class="field">
-                        <label>Payment method:<span style="color:red">*</span></label>
+                        <label>Phương thức thanh toán:<span style="color:red">*</span></label>
                         <select name="paymentMethod">
                             <%
                                  for(PaymentMethod each:listPaymentMethods){
@@ -106,7 +106,7 @@
 						</select>
                         </div>
                         <div class="field">
-                        <label>Delivery method:<span style="color:red">*</span></label>
+                        <label>Phương thức giao hàng:<span style="color:red">*</span></label>
                         <select name="shippingMethod">
 			<%
                                  for(ShippingMethod each:listShippingMethods){
@@ -120,8 +120,8 @@
 
                         <div>                     
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                     
-                        <input type="submit" value="Buying" name="receiptButton" style="width: 84px">
-                        <input type="reset" value="Cancel" style="width: 98px">
+                        <input type="submit" value="Mua" name="receiptButton" style="width: 84px">
+                        <input type="reset" value="Hủy bỏ" style="width: 98px">
                         </div>
 
                          </fieldset>

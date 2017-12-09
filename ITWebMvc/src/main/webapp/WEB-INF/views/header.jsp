@@ -1,29 +1,24 @@
 
-<%@page import="com.it.spring.model.Users"%>
+<%@page import="com.it.spring.model.Userz"%>
 <%
-Users userz = null;
-    if((Users)session.getAttribute("users")!=null){
-         userz = (Users)session.getAttribute("users");
+Userz userz = null;
+    if((Userz)session.getAttribute("users")!=null){
+         userz = (Userz)session.getAttribute("users");
    
 %>
-
-
-
-
-
 <div class="header">
 	<div class="topheader">
     	<div class="topheader-inner w1020px marginauto">	
         	<ul class="pull-right">
             <li>
-                <a href="myAccount.jsp">My account</a>
+                <a href="${pageContext.request.contextPath}/account">Tài khoản</a>
                 </li>
                
-                <li><a href="shoppingCart.jsp">Shopping cart</a></li>
+                <li><a href="${pageContext.request.contextPath}/cart/">Giỏ hàng</a></li>
                 
-                <li><a href="LogoutServlet">Logout</a></li>
+                <li><a href="${pageContext.request.contextPath}/logout">Đăng xuất</a></li>
                 
-                 <li><a href="regist.jsp"><%=userz!=null?"<b style='color:blue'>Welcome "+userz.getFirstName()+"</b>":""%></a></li>
+                 <li><a href="${pageContext.request.contextPath}/regist"><%=userz!=null?"<b style='color:blue'>Welcome "+userz.getFirstName()+"</b>":""%></a></li>
                 
             </ul>
             
@@ -38,14 +33,14 @@ Users userz = null;
     	<div class="topheader-inner w1020px marginauto">	
         	<ul class="pull-right">
             <li>
-                <a href="myAccount.jsp">My account</a>
+                <a href="${pageContext.request.contextPath}/account">Tài khoản</a>
                 </li>
                
-                <li><a href="shoppingCart.jsp">Shopping cart</a></li>
+                <li><a href="${pageContext.request.contextPath}/cart/">Giỏ hàng</a></li>
                 
-                <li><a href="login">Login</a></li>
+                <li><a href="${pageContext.request.contextPath}/login">Đăng nhập</a></li>
                
-                <li><a href="regist.jsp">Sign in</a></li>
+                <li><a href="${pageContext.request.contextPath}/regist">Đăng ký</a></li>
 
             </ul>
             
@@ -71,17 +66,17 @@ Users userz = null;
         	<div class="w1020px marginauto">
             	<ul class="nav " id="header" style="width:100%">
                     <li class="active">
-                    <a href="index.jsp">Home</a>
+                    <a href="${pageContext.request.contextPath}">Trang chủ</a>
                     </li>
-                    <li><a href="laptop.jsp">Mobile</a></li>
+                    <li><a href="${pageContext.request.contextPath}/product">Sản phẩm</a></li>
                     
-                    <li><a href="aboutUs.jsp">About Us </a></li>
+                    <li><a href="${pageContext.request.contextPath}/aboutUs">Về chúng tôi </a></li>
                     
-                    <li><a href="news.jsp">News</a></li>
+                    <li><a href="${pageContext.request.contextPath}/news">Tin tức</a></li>
                     
-                    <li><a href="contact.jsp">Contact </a></li>
+                    <li><a href="${pageContext.request.contextPath}/contact">Liên hệ</a></li>
                     
-                    <li><a href="#">Help </a></li>                   
+                    <li><a href="${pageContext.request.contextPath}/help">Q&A</a></li>                
                 </ul>
              </div>
         </div>

@@ -59,6 +59,11 @@ ul li ul a{
 <div align="center">
 
     		<form action="" method="post">
+                    
+                                <input name="day" style="width: 36px" type="text" />&nbsp;&nbsp;&nbsp; 
+			Month:&nbsp; <input name="month" style="width: 36px" type="text" /> 
+			Year: <input name="year" style="width: 36px" type="text" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input name="searchButton" type="submit" value="Search" />
     		
 				<table style="width: 80%" border="1px">
 					<tr bgcolor="red" style="color:white">
@@ -73,6 +78,10 @@ ul li ul a{
 						<th class="auto-style1">
 						<input name="delete" type="submit" value="Finish" /></th>
 					</tr>
+                                    
+                                    
+                                        
+                                       
                                     <%
                                         OrderDao orderDao = new OrderDao();
                                         List<Order> orders = orderDao.showAllOrder();
@@ -98,6 +107,7 @@ ul li ul a{
 						<td class="auto-style1">&nbsp;
 						<input name="Checkbox1" type="checkbox" /></td>
 					</tr>
+                                                     
                                     
                                     <%
                                     }

@@ -1,7 +1,7 @@
 
 <%@page import="java.util.List"%>
-<%-- <%@page import="model.Category"%>
-<%@page import="dao.CategoryDAO"%> --%>
+<%@page import="model.Category"%>
+<%@page import="dao.CategoryDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -47,7 +47,7 @@ ul li ul a{
 
 </style>
 </head>
-<%-- <%  
+<%  
     Category category = null;
     String cat_id = request.getParameter("id");
     if(cat_id!=null){
@@ -56,7 +56,7 @@ ul li ul a{
     }
     else out.print("");
 
-%> --%>
+%>
 <body>
 <!--HEADRER-->
 <jsp:include page="adminHeader.jsp"/>
@@ -68,7 +68,7 @@ ul li ul a{
  <!--Product detail-->
  
     		<form action="CategoryAddServlet" method="post">
-                    <input type="hidden" value="<%-- <%=cat_id%> --%>"name="cat_id"/>
+                    <input type="hidden" value="<%=cat_id%>"name="cat_id"/>
                     <table align="center">
                         <tr>
                             <td>Name:<input type="text" name="cat_name" /></td>

@@ -20,19 +20,46 @@ public class ProductionServiceImpl implements ProductionService {
 
 	@Override
 	public List<Product> ishot() {
-		// TODO Auto-generated method stub
 		return productDAO.ishot();
 	}
 
 	@Override
 	public List<Product> isnew() {
-		// TODO Auto-generated method stub
 		return productDAO.isnew();
 	}
 
 	@Override
 	public Product findProductByID(int pro_id) {
 		return productDAO.findProductByID(pro_id);
+	}
+
+	@Override
+	public void updateProduct(Product product) {
+		productDAO.updateProduct(product);
+		
+	}
+
+	@Override
+	public void insertProduct(Product product) {
+		productDAO.insertProduct(product);
+		
+	}
+
+	@Override
+	public void deleteProduct(String[] products) {
+		productDAO.deleteProduct(products);
+		
+	}
+
+	@Override
+	public List<Product> hightPriceToSmall() {
+		return productDAO.hightPriceToSmall();
+	}
+
+	@Override
+	public List<Product> smallPriceToHight() {
+		// TODO Auto-generated method stub
+		return productDAO.smallPriceToHight();
 	}
 
 }

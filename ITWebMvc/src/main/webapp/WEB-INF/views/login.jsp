@@ -30,6 +30,7 @@
 <!--MAINBODY-->
 <div class="mainbody left-fl">
 	<div class="mainbody-content w1020px marginauto">
+    <div class="mainbody-content w1020px marginauto">
          <jsp:include page="${request.contextPath}/category/leftpanel"></jsp:include>
     </div>
         <!--Vung ben phai--><!--Vung ben phai--><!--Vung ben phai--><!--Vung ben phai--><!--Vung ben phai-->

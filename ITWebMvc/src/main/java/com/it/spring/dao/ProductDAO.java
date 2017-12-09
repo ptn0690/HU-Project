@@ -8,6 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import javax.sql.DataSource;
+
+import com.it.spring.common.AppConstant;
 import com.it.spring.model.Category;
 import com.it.spring.model.Product;
 import com.it.spring.model.Supplier;
@@ -47,7 +49,7 @@ public class ProductDAO implements ProductDAOImpl {
                 productObject.setPrice(result.getDouble("pro_price"));
                 productObject.setPro_ishot(result.getInt("pro_ishot"));
                 productObject.setPro_isnew(result.getInt("pro_isnew"));
-                productObject.setPro_smallImgae(result.getString("pro_smallImage"));
+                productObject.setPro_smallImage(result.getString("pro_smallImage"));
                 productObject.setPro_largeImage(result.getString("pro_largeImage"));
                 list.add(productObject);
             }
@@ -87,7 +89,7 @@ public class ProductDAO implements ProductDAOImpl {
                 productObject.setPrice(result.getDouble("pro_price"));
                 productObject.setPro_ishot(result.getInt("pro_ishot"));
                 productObject.setPro_isnew(result.getInt("pro_isnew"));
-                productObject.setPro_smallImgae(result.getString("pro_smallImage"));
+                productObject.setPro_smallImage(result.getString("pro_smallImage"));
                 productObject.setPro_largeImage(result.getString("pro_largeImage"));
                 list.add(productObject);
             }
@@ -127,7 +129,7 @@ public class ProductDAO implements ProductDAOImpl {
                 productObject.setPrice(result.getDouble("pro_price"));
                 productObject.setPro_ishot(result.getInt("pro_ishot"));
                 productObject.setPro_isnew(result.getInt("pro_isnew"));
-                productObject.setPro_smallImgae(result.getString("pro_smallImage"));
+                productObject.setPro_smallImage(result.getString("pro_smallImage"));
                 productObject.setPro_largeImage(result.getString("pro_largeImage"));
                 list.add(productObject);
             }
@@ -167,7 +169,7 @@ public class ProductDAO implements ProductDAOImpl {
                 productObject.setPrice(result.getDouble("pro_price"));
                 productObject.setPro_ishot(result.getInt("pro_ishot"));
                 productObject.setPro_isnew(result.getInt("pro_isnew"));
-                productObject.setPro_smallImgae(result.getString("pro_smallImage"));
+                productObject.setPro_smallImage(result.getString("pro_smallImage"));
                 productObject.setPro_largeImage(result.getString("pro_largeImage"));
                 list.add(productObject);
             }
@@ -206,7 +208,7 @@ public class ProductDAO implements ProductDAOImpl {
                 productObject.setPrice(result.getDouble("pro_price"));
                 productObject.setPro_ishot(result.getInt("pro_ishot"));
                 productObject.setPro_isnew(result.getInt("pro_isnew"));
-                productObject.setPro_smallImgae(result.getString("pro_smallImage"));
+                productObject.setPro_smallImage(result.getString("pro_smallImage"));
                 productObject.setPro_largeImage(result.getString("pro_largeImage"));
                 list.add(productObject);
             }
@@ -246,7 +248,7 @@ public class ProductDAO implements ProductDAOImpl {
                 productObject.setPrice(result.getDouble("pro_price"));
                 productObject.setPro_ishot(result.getInt("pro_ishot"));
                 productObject.setPro_isnew(result.getInt("pro_isnew"));
-                productObject.setPro_smallImgae(result.getString("pro_smallImage"));
+                productObject.setPro_smallImage(result.getString("pro_smallImage"));
                 productObject.setPro_largeImage(result.getString("pro_largeImage"));
 
             }
@@ -279,7 +281,7 @@ public class ProductDAO implements ProductDAOImpl {
             p.setDouble(12, product.getPrice());
             p.setInt(13, product.getPro_isnew());
             p.setInt(14, product.getPro_ishot());
-            p.setString(15, product.getPro_smallImgae());
+            p.setString(15, product.getPro_smallImage());
             p.setString(16, product.getPro_largeImage());
             p.setInt(17, product.getId());
             p.execute();
@@ -289,11 +291,11 @@ public class ProductDAO implements ProductDAOImpl {
     }
 
     public void insertProduct(Product product) {
-        String sql = " insert into product (sup_id, cat_id, pro_name, pro_os, pro_cpu, pro_ram, pro_graphic, pro_monitor, pro_battery, pro_size, pro_camera, pro_price, pro_ishot, pro_isnew, pro_smallImage,pro_largeImage)  "
-                + "values('" + product.getSupplier().getSup_id() + "','" + product.getCategory().getCat_id() + "','" + product.getName() + "','" + product.getPro_os() + "','" + product.getPro_cpu() + "','" + product.getPro_ram() + "','" + product.getPro_graphic() + "','" + product.getPro_monitor() + "','" + product.getPro_battery() + "','" + product.getPro_size() + "','" + product.getPro_camera() + "','" + product.getPrice() + "','" + product.getPro_ishot() + "','" + product.getPro_isnew() + "','" + product.getPro_smallImage() + "','" + product.getPro_largeImage() + "')";
+        String sql = " insert into product (sup_id, cat_id, pro_name, pro_os, pro_cpu, pro_ram, pro_graphic, pro_monitor, pro_battery, pro_size, pro_camera, pro_price, pro_ishot, pro_isnew, pro_smallImage,pro_largeImage, pro_quantity)  "
+                + "values('" + product.getSupplier().getSup_id() + "','" + product.getCategory().getCat_id() + "','" + product.getName() + "','" + product.getPro_os() + "','" + product.getPro_cpu() + "','" + product.getPro_ram() + "','" + product.getPro_graphic() + "','" + product.getPro_monitor() + "','" + product.getPro_battery() + "','" + product.getPro_size() + "','" + product.getPro_camera() + "','" + product.getPrice() + "','" + product.getPro_ishot() + "','" + product.getPro_isnew() + "','" + product.getPro_smallImage() + "','" + product.getPro_largeImage() + "','"+ AppConstant.pro_quantity +"')";
         try {
 
-            Connection connection = dataSource.getConnection();
+            Connection connection = dataSource.getConnection(); 
             Statement st = connection.createStatement();
             st.executeUpdate(sql);
             st.close();

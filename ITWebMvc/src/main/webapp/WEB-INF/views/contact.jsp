@@ -12,6 +12,9 @@
 <link rel="stylesheet" media="screen" href="css/style.css" />
 <script src="js/bootraps/bootstrap.js"></script>
 <script src="js/bootraps/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="script/contactUs.js"></script>
 
 </head>
 
@@ -23,80 +26,9 @@
 
 <!--MAINBODY-->
 <div class="mainbody left-fl">
-	<div class="mainbody-content w1020px marginauto">
-    	<div class="left-area w220px left-fl">
-        	<div class="block menu-list branch-mobile "><h4 class="pd5x10"> Danh mục</h4>
-            	<ul class="nav nav-list w190px bs-docs-sidenav ">
-            	<!--product type in here(start)-->
-                	<li class="active">
-                        <a href="#" >
-                    		<span class="branch-mobile">Apple</span>
-                            <span class="branch-mobile-logo"><img src="#" /></span>
-                        </a>
-                                           </li>
-                    <li><a href="#">
-                    		<span class="branch-mobile">Sony</span>
-                            <span class="branch-mobile-logo"><img src="#" /></span>
-                        </a>
-                                           </li>
-                    <li ><a href="#" >
-                    		<span class="branch-mobile">Acer</span>
-                            <span class="branch-mobile-logo"><img src="#" /></span>
-                        </a>
-                                           </li>
-                    <li><a href="#" >
-                    		<span class="branch-mobile">HP</span>
-                            <span class="branch-mobile-logo"><img src="#" /></span>
-                        </a>
-                    </li>
-                    <!--product type in here(end)-->
-                </ul>
+	   <div class="mainbody-content w1020px marginauto">
+           <jsp:include page="leftpanel.jsp"/>    
             </div>
-            
-                      
-            <div class="block menu-list supportlive"><h4 class="pd5x10 ">Hỗ trợ trực tuyến</h4>
-            	<ul class="nav nav-list w190px ">
-                	<li><a href="ymsgr:SendIM?myphamhoakim1">
-                    Kinh doanh 1:
-                    <img id="lvhelp_stt" src="http://opi.yahoo.com/online?u=myphamhoakim1&m=g&t=1">
-                    </a></li>
-                    <li><a href="ymsgr:SendIM?myphamhoakim1">
-                    Kinh doanh 2:
-                    <img id="lvhelp_stt" src="http://opi.yahoo.com/online?u=myphamhoakim1&m=g&t=1">
-                    </a></li>
-                    <li><a href="ymsgr:SendIM?myphamhoakim1">
-                    Kinh doanh 3:
-                    <img id="lvhelp_stt" src="http://opi.yahoo.com/online?u=myphamhoakim1&m=g&t=1">
-                    </a></li>
-                    <li><a href="ymsgr:SendIM?myphamhoakim1">
-                    Kinh doanh 4:
-                    <img id="lvhelp_stt" src="http://opi.yahoo.com/online?u=myphamhoakim1&m=g&t=1">
-                    </a></li>
-                </ul>
-            </div>
-            
-            
-            <div class="block bannerw220"><!--Chi lay anh trong banner, Tai phan minh hoa dang lay trong phan logo-->
-            	<ul class="clean">
-                	<li><a href="#">
-                    	<img src="images/banner/banner1.png" />
-                    	</a>
-                    </li>
-                    <li><a href="#">
-                    	<img src="images/banner/banner2.png" />
-                    	</a>
-                    </li>
-                    <li><a href="#">
-                    	<img src="images/product/Image 33.png" />
-                    	</a>
-                    </li>
-                    <li><a href="#">
-                    	<img src="images/product/Image 32.png" />
-                    	</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
         
         <!--Vung ben phai--><!--Vung ben phai--><!--Vung ben phai--><!--Vung ben phai--><!--Vung ben phai-->
         <div class="right-area w775px left-fl pd10">
@@ -136,28 +68,28 @@
                 %>
                 
                 
-                    <form action="ContactServlet" id="contacts-form">
+                <form id="frm" name="frm" action="ContactServlet" >
                         <fieldset>
                         <div class="field">
                         <label>Full name:</label>
-                        <input type="text" name="fullname"/>
+                        <input type="text" name="fullname" id="fullname"/>
                         </div>
                         <div class="field">
                         <label>Phone Number:</label>
-                        <input type="text" name="phoneNumber"/>
+                        <input class="required" type="text" name="phoneNumber" id="phoneNumber"/>
                         </div>
 
                         <div class="field">
                         <label>Email:</label>
-                        <input type="text" name="email"/>
+                        <input class="required" type="text" name="email" id="email"/>
                         </div>
                         <div class="field">
                         <label>Address:</label>
-                        <input type="text" name="address"/>
+                        <input class="required" type="text" name="address" id="address"/>
                         </div>
                         <div class="field">
                         <label>Message:</label>
-                        <textarea name="message" cols="" rows=""></textarea>
+                        <textarea class="required" name="message" id="message" cols="" rows=""></textarea>
                         </div>
                         
                         <div align="right" >

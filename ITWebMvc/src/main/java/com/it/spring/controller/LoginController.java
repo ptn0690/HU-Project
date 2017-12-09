@@ -43,12 +43,12 @@ public class LoginController {
 
 		if (null != userz && userz.getIsAdmin() == 0) {
 			session.setAttribute("users", userz);
-			mav = new ModelAndView("index");
+			mav = new ModelAndView("redirect:/");
 
 		} else if (null != userz && userz.getIsAdmin() == 1) {
 			
 			session.setAttribute("users", userz);
-			mav = new ModelAndView("admin");
+			mav = new ModelAndView("redirect:/admin/");
 
 		} else {
 			mav = new ModelAndView("login");
@@ -63,6 +63,6 @@ public class LoginController {
 	@RequestMapping(value = "/logout") 
     public String logout(HttpSession session) {
         session.invalidate();
-        return "index";
+        return "redirect:/";
     }
 }

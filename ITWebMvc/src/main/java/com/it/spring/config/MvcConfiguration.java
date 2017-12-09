@@ -21,9 +21,15 @@ import com.it.spring.dao.ContactDAO;
 import com.it.spring.dao.ContactDAOImpl;
 import com.it.spring.dao.LoginDAO;
 import com.it.spring.dao.LoginDAOImpl;
+import com.it.spring.dao.OrderDAO;
+import com.it.spring.dao.OrderDAOImpl;
+import com.it.spring.dao.OrderDetailDAO;
+import com.it.spring.dao.OrderDetailDAOImpl;
 import com.it.spring.dao.PaymentMethodDAO;
 import com.it.spring.dao.PaymentMethodDAOImpl;
 import com.it.spring.dao.ProductDAO;
+import com.it.spring.dao.ReceiptDAO;
+import com.it.spring.dao.ReceiptDAOImpl;
 import com.it.spring.dao.ShippingMethodDAO;
 import com.it.spring.dao.ShippingMethodDAOImpl;
 import com.it.spring.dao.SupplierDAO;
@@ -101,5 +107,20 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter{
 	@Bean
 	public UserzDAO getUserzDAO() {
 		return new UserzDAOImpl(getDataSource());
+	}
+	
+	@Bean
+	public ReceiptDAO getReceiptDAO() {
+		return new ReceiptDAOImpl(getDataSource());
+	}
+	
+	@Bean
+	public OrderDAO getOrderDAO() {
+		return new OrderDAOImpl(getDataSource());
+	}
+	
+	@Bean
+	public OrderDetailDAO getOrderDetailDAO() {
+		return new OrderDetailDAOImpl(getDataSource());
 	}
 }

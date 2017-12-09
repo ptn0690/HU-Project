@@ -43,12 +43,12 @@ public class Product {
     }
      
 
-    public String getPro_smallImgae() {
+    public String getImgae() {
         return image;
     }
 
-    public void setPro_smallImgae(String pro_smallImgae) {
-        this.image = pro_smallImgae;
+    public void setImgae(String imgae) {
+        this.image = imgae;
     }
 
     public String getPro_largeImage() {

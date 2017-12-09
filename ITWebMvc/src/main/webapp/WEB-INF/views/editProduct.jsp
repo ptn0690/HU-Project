@@ -1,29 +1,20 @@
-<%-- 
-    Document   : editProduct
-    Created on : Dec 11, 2013, 2:01:45 PM
-    Author     : Nhan
---%>
-
-<%@page import="model.Supplier"%>
-<%@page import="dao.SupplierDAO"%>
+<%@page import="com.it.spring.model.Supplier"%>
 <%@page import="java.util.List"%>
-<%@page import="model.Category"%>
-<%@page import="dao.CategoryDAO"%>
-<%@page import="dao.ProductDAO"%>
-<%@page import="model.Product"%>
-<%@page import="model.Product"%>
+<%@page import="com.it.spring.model.Category"%>
+<%@page import="com.it.spring.model.Product"%>
+<%@page import="com.it.spring.model.Product"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Mobile Service Center</title>
-        <link rel="stylesheet" media="screen" href="css/bootraps/bootstrap.css" />
-        <link rel="stylesheet" media="screen" href="css/bootraps/bootstrap-responsive.css" />
-        <link rel="stylesheet" media="screen" href="main.css" />
-        <link rel="stylesheet" media="screen" href="css/style.css" />
-        <script src="js/bootraps/bootstrap.js"></script>
-        <script src="js/bootraps/bootstrap.min.js"></script>
+        <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/css/bootraps/bootstrap.css" />
+        <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/css/bootraps/bootstrap-responsive.css" />
+        <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/main.css" />
+        <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/css/style.css" />
+        <script src="${pageContext.request.contextPath}/resources/js/bootraps/bootstrap.js"></script>
+        <script src="${pageContext.request.contextPath}/resources/js/bootraps/bootstrap.min.js"></script>
         <style>
             .dropbox{
 
@@ -57,16 +48,20 @@
         </style>
     </head>
     <%
-        CategoryDAO categoryDAO = new CategoryDAO();
+       /*  CategoryDAO categoryDAO = new CategoryDAO();
         List<Category> listOfCategory = categoryDAO.findALl();
         SupplierDAO supplierDAO = new SupplierDAO();
-        List<Supplier> listOfSupplier = supplierDAO.findALl();
-        Product product = null;
-        String pro_id = request.getParameter("id");
+        List<Supplier> listOfSupplier = supplierDAO.findALl(); */
+        //Product product = null;
+       /*  String pro_id = request.getParameter("id");
         if (pro_id != null) {
             ProductDAO productDAO = new ProductDAO();
-            product = productDAO.findProductByID(Integer.parseInt(pro_id));
-        }
+            //product = productDAO.findProductByID(Integer.parseInt(pro_id));
+       // } */
+        
+        List<Category> listOfCategory = (List<Category>) request.getAttribute("listCategories");
+        List<Supplier> listOfSupplier = (List<Supplier>) request.getAttribute("listSuppliers");
+        Product product = (Product)request.getAttribute("product");
 
     %>
     <body>
@@ -81,11 +76,11 @@
             <div style="float:left" >
             </div>
             <div align="center">
-                <form method="post" action="ProductAddServlet" enctype="multipart/form-data">
-                    <input type="hidden" value="<%=pro_id%>"name="pro_id"/>
+                <form method="post" action="updateProduct" id="frmUpdate" name="frmUpdate" enctype="application/x-www-form-urlencoded">
+                    <input type="hidden" value="<%=product.getId()%>"name="pro_id"/>
                     <table>
                         <tr>
-                            <td rowspan="17"><img width="600px" height="600px" src="images/<%= product.getPro_largeImage()%>"/></td><br/>
+                            <td rowspan="17"><img width="600px" height="600px" src="${pageContext.request.contextPath}/resources/images/<%= product.getPro_largeImage()%>"/></td><br/>
                            
                             <td>Name;</td>
                             <td><input name="pro_name" type="text" value="<%= product != null ? product.getName() : ""%>" /></td>

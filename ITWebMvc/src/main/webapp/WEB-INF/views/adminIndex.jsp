@@ -1,3 +1,8 @@
+<%-- 
+    Document   : adminIndex
+    Created on : Dec 11, 2013, 2:32:14 PM
+    Author     : Nhan
+--%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
