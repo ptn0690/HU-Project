@@ -15,6 +15,13 @@
 		<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/css/style.css" />
 		<script src="${pageContext.request.contextPath}/resources/js/bootraps/bootstrap.js"></script>
 		<script src="${pageContext.request.contextPath}/resources/js/bootraps/bootstrap.min.js"></script>
+		
+		<style type="text/css">
+		.auto-style1 {
+		text-align: center;
+		font-size: xx-large;
+		}
+		</style>
 
     </head>
 

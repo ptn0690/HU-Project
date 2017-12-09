@@ -1,21 +1,15 @@
-<%-- 
-    Document   : aboutUs
-    Created on : Dec 11, 2013, 1:58:34 PM
-    Author     : Nhan
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Mobile Service Center</title>s
-<link rel="stylesheet" media="screen" href="css/bootraps/bootstrap.css" />
-<link rel="stylesheet" media="screen" href="css/bootraps/bootstrap-responsive.css" />
-<link rel="stylesheet" media="screen" href="main.css" />
-<link rel="stylesheet" media="screen" href="css/style.css" />
-<script src="js/bootraps/bootstrap.js"></script>
-<script src="js/bootraps/bootstrap.min.js"></script>
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/css/bootraps/bootstrap.css" />
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/css/bootraps/bootstrap-responsive.css" />
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/main.css" />
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/css/style.css" />
+<script src="${pageContext.request.contextPath}/resources/js/bootraps/bootstrap.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/bootraps/bootstrap.min.js"></script>
 
 </head>
 
@@ -28,8 +22,9 @@
 <!--MAINBODY-->
 <div class="mainbody left-fl">
 	  <div class="mainbody-content w1020px marginauto">
-           <jsp:include page="leftpanel.jsp"/>    
-            </div>
+           <div class="mainbody-content w1020px marginauto">
+                <jsp:include page="${request.contextPath}/category/leftpanel"></jsp:include>
+    	   </div>
         
         <!--Vung ben phai--><!--Vung ben phai--><!--Vung ben phai--><!--Vung ben phai--><!--Vung ben phai-->
  <div class="right-area w775px left-fl pd10">
@@ -39,7 +34,7 @@
               <li class="active">About Us - Giới thiệu về Mobile Services Center</li>
             </ul>
             <div class="banner-group wp100 clear">
-               <img class="banner-group" src="images/banner/2.jpg" />
+               <img class="banner-group" src="${pageContext.request.contextPath}/resources/images/banner/2.jpg" />
             </div>
           
         <div class="market">

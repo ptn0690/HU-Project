@@ -1,57 +1,86 @@
 $(function (){
-	$("#contacts-form").validate({
+
+
+        $("#frm").validate({
 		
 		rules:{
 			username: {
 				required : true,
+				minlength: 4
+			},
+			
+			password: {
+				required : true,
 				minlength: 6
 			},
 			
-			password: "required",
+			firstname: {
+				required : true
+				
+			},
 			
-			lastname: "required",
-			firstname: "required",
+			lastname: {
+				required : true
+				
+			},
+			
+			phonenumber: {
+				required: true,
+				min: 100000000,
+				max: 9999999999
+			},
+	
 			email: {
 				required : true,
 				email: true
 			},
-			agree: "required"
+			
+			
+			address: {
+				required: true
+			},
+			
+			
 		},
 		messages:{
 			username: {
-				required : "Rquired",
+				required : "Required",
 				minlength: "At least 6 letters required"
 			},
 			
-			password: "Required",
-			passwordrety: "Required",
-			lastname: "Required",
-			firstname: "Required",
-			birthday: {
-				requierd: "Rquired",
-				min: "Must be a 2-digit number",
-				max: "Must be a 2-digit number, and less than 31"
-			},
-			birthmonth: {
-				requierd: "Rquired",
-				min: "Must be a 2-digit number",
-				max: "Must be a 4-digit number, and less thang 12"
-			},
-			birthyear: {
-				requierd: "Rquired",
-				min: "Must be a 4-digit number",
-				max: "Must be a 4-digit number"
+			password: {
+				required : "Required",
+				minlength: "At least 6 letters required"
 			},
 			
-			gender: "Required",
+			firstname: {
+				required : "Required",
+				
+			},
+			
+			lastname: {
+				required : "Required",
+				
+			},
+			
+			
+			
 			email: {
 				required : "Required",
 				email: "Email address is invalid"
 			},
-			agree: "You have to check this box"
+			phonenumber: {
+				requierd: "Required",
+				min: "Must be a 10 to 11 - digit number",
+				max: "Must be a 10 to 11 - digit number"
+			},
+			
+			address: {
+				required : "Required",
+				
+			}
+            
+			
 		}
 	});
 });
-
-
-

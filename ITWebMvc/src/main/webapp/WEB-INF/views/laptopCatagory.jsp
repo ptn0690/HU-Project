@@ -1,9 +1,3 @@
-<%-- 
-    Document   : laptop
-    Created on : Dec 11, 2013, 2:05:40 PM
-    Author     : Nhan
---%>
-
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.Category"%>
 <%@page import="dao.CategoryDAO"%>

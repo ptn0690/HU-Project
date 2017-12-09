@@ -6,7 +6,7 @@ Userz userz = null;
     if((Userz)session.getAttribute("users")!=null){
          userz = (Userz)session.getAttribute("users");
    
-%>
+%>       
 <div class="header">
 	<div class="topheader">
     	<div class="topheader-inner w1020px marginauto">	
@@ -75,7 +75,7 @@ Userz userz = null;
                     
                     <li><a href="${pageContext.request.contextPath}/news">Tin tức</a></li>
                     
-                    <li><a href="${pageContext.request.contextPath}/contact">Liên hệ</a></li>
+                    <li><a href="${pageContext.request.contextPath}/contact/">Liên hệ</a></li>
                     
                     <li><a href="${pageContext.request.contextPath}/help">Q&A</a></li>                
                 </ul>

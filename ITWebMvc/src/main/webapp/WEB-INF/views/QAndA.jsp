@@ -1,13 +1,6 @@
-<%-- 
-    Document   : shipping
-    Created on : Dec 11, 2013, 2:09:05 PM
-    Author     : Nhan
---%>
-
-
-<%@page import="model.QAndA"%>
+<%@page import="com.it.spring.model.QAndA"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.QandADAO"%>
+<%@page import="com.it.spring.dao.QandADAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">

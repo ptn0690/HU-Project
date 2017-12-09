@@ -26,22 +26,10 @@
 
                     <div class="block menu-list supportlive"><h4 class="pd5x10 ">Hỗ trợ trực tuyến</h4>
                         <ul class="nav nav-list w190px ">
-                            <li><a href="ymsgr:SendIM?myphamhoakim1">
-                                    Kinh doanh 1:
-                                    <img id="lvhelp_stt" src="http://opi.yahoo.com/online?u=myphamhoakim1&m=g&t=1">
-                                </a></li>
-                            <li><a href="ymsgr:SendIM?myphamhoakim1">
-                                    Kinh doanh 2:
-                                    <img id="lvhelp_stt" src="http://opi.yahoo.com/online?u=myphamhoakim1&m=g&t=1">
-                                </a></li>
-                            <li><a href="ymsgr:SendIM?myphamhoakim1">
-                                    Kinh doanh 3:
-                                    <img id="lvhelp_stt" src="http://opi.yahoo.com/online?u=myphamhoakim1&m=g&t=1">
-                                </a></li>
-                            <li><a href="ymsgr:SendIM?myphamhoakim1">
-                                    Kinh doanh 4:
-                                    <img id="lvhelp_stt" src="http://opi.yahoo.com/online?u=myphamhoakim1&m=g&t=1">
-                                </a></li>
+                            <li><a title="Talk with me via Skype " href="skype:phandinhvcd?chat"><img alt="Kinh doanh 1 : via Skype" src="http://mystatus.skype.com/smallicon/phandinhvcd"></a></li>
+                            <li><a title="Talk with me via Skype " href="skype:phandinhvcd?chat"><img alt="Kinh doanh 2 : via Skype" src="http://mystatus.skype.com/smallicon/phandinhvcd"></a></li></li>
+                            <li><a title="Talk with me via Skype " href="skype:phandinhvcd?chat"><img alt="Kinh doanh 3 : via Skype" src="http://mystatus.skype.com/smallicon/phandinhvcd"></a></li></li>
+                            <li><a title="Talk with me via Skype " href="skype:phandinhvcd?chat"><img alt="Kinh doanh 4 : via Skype" src="http://mystatus.skype.com/smallicon/phandinhvcd"></a></li></li>
                         </ul>
                     </div>
 

@@ -5,12 +5,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Mobile Service Center</title>
-<link rel="stylesheet" media="screen" href="css/bootraps/bootstrap.css" />
-<link rel="stylesheet" media="screen" href="css/bootraps/bootstrap-responsive.css" />
-<link rel="stylesheet" media="screen" href="main.css" />
-<link rel="stylesheet" media="screen" href="css/style.css" />
-<script src="js/bootraps/bootstrap.js"></script>
-<script src="js/bootraps/bootstrap.min.js"></script>
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/css/bootraps/bootstrap.css" />
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/css/bootraps/bootstrap-responsive.css" />
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/main.css" />
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/css/style.css" />
+<script src="${pageContext.request.contextPath}/resources/js/bootraps/bootstrap.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/bootraps/bootstrap.min.js"></script>
 
 <style type="text/css">
 .auto-style1 {
@@ -29,80 +29,9 @@
 
 <!--MAINBODY-->
 <div class="mainbody left-fl">
-	<div class="mainbody-content w1020px marginauto">
-    	<div class="left-area w220px left-fl">
-        	<div class="block menu-list branch-mobile "><h4 class="pd5x10"> Danh mục</h4>
-            	<ul class="nav nav-list w190px bs-docs-sidenav ">
-            	<!--product type in here(start)-->
-                	<li class="active">
-                        <a href="#" >
-                    		<span class="branch-mobile">Apple</span>
-                            <span class="branch-mobile-logo"><img src="#" /></span>
-                        </a>
-                                           </li>
-                    <li><a href="#">
-                    		<span class="branch-mobile">Sony</span>
-                            <span class="branch-mobile-logo"><img src="#" /></span>
-                        </a>
-                                           </li>
-                    <li ><a href="#" >
-                    		<span class="branch-mobile">Acer</span>
-                            <span class="branch-mobile-logo"><img src="#" /></span>
-                        </a>
-                                           </li>
-                    <li><a href="#" >
-                    		<span class="branch-mobile">HP</span>
-                            <span class="branch-mobile-logo"><img src="#" /></span>
-                        </a>
-                    </li>
-                    <!--product type in here(end)-->
-                </ul>
-            </div>
-            
-                      
-            <div class="block menu-list supportlive"><h4 class="pd5x10 ">Hỗ trợ trực tuyến</h4>
-            	<ul class="nav nav-list w190px ">
-                	<li><a href="ymsgr:SendIM?myphamhoakim1">
-                    Kinh doanh 1:
-                    <img id="lvhelp_stt" src="http://opi.yahoo.com/online?u=myphamhoakim1&m=g&t=1">
-                    </a></li>
-                    <li><a href="ymsgr:SendIM?myphamhoakim1">
-                    Kinh doanh 2:
-                    <img id="lvhelp_stt" src="http://opi.yahoo.com/online?u=myphamhoakim1&m=g&t=1">
-                    </a></li>
-                    <li><a href="ymsgr:SendIM?myphamhoakim1">
-                    Kinh doanh 3:
-                    <img id="lvhelp_stt" src="http://opi.yahoo.com/online?u=myphamhoakim1&m=g&t=1">
-                    </a></li>
-                    <li><a href="ymsgr:SendIM?myphamhoakim1">
-                    Kinh doanh 4:
-                    <img id="lvhelp_stt" src="http://opi.yahoo.com/online?u=myphamhoakim1&m=g&t=1">
-                    </a></li>
-                </ul>
-            </div>
-            
-            
-            <div class="block bannerw220"><!--Chi lay anh trong banner, Tai phan minh hoa dang lay trong phan logo-->
-            	<ul class="clean">
-                	<li><a href="#">
-                    	<img src="images/banner/banner1.png" />
-                    	</a>
-                    </li>
-                    <li><a href="#">
-                    	<img src="images/banner/banner2.png" />
-                    	</a>
-                    </li>
-                    <li><a href="#">
-                    	<img src="images/product/Image 33.png" />
-                    	</a>
-                    </li>
-                    <li><a href="#">
-                    	<img src="images/product/Image 32.png" />
-                    	</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+		<div class="mainbody-content w1020px marginauto">
+                <jsp:include page="${request.contextPath}/category/leftpanel"></jsp:include>
+    	</div>
         
         <!--Vung ben phai--><!--Vung ben phai--><!--Vung ben phai--><!--Vung ben phai--><!--Vung ben phai-->
       <div class="right-area w775px left-fl pd10">
@@ -112,7 +41,7 @@
               <li class="active">Tin tức - Cập nhật tin tức về MSC và thông tin công nghệ trên thế giới</li>
             </ul>
             <div class="banner-group wp100 clear">
-               <img class="banner-group" src="images/banner/6.jpg" />
+               <img class="banner-group" src="${pageContext.request.contextPath}/resources/images/banner/6.jpg" />
             </div>
           
 <div class="grid w710px left-fl pd10">
@@ -122,7 +51,7 @@
       <li class="w230px">
         <div class="thumbnail">
           <div class="ankhunganh">
-            <img class="resize-anhtinright" src="images/news/mobile_device_image3.jpg">
+            <img class="resize-anhtinright" src="${pageContext.request.contextPath}/resources/images/news/mobile_device_image3.jpg">
             </div>
           <div class="caption">
             <a href="#"><h4>Thời đại SmartPhone giá rẻ đã đến</h4></a>
@@ -134,7 +63,7 @@
       <li class="w230px">
         <div class="thumbnail">
           <div class="ankhunganh">
-            <img class="resize-anhtinright" src="images/news/mobile-chrome-hero.png">
+            <img class="resize-anhtinright" src="${pageContext.request.contextPath}/resources/images/news/mobile-chrome-hero.png">
             </div>
           <div class="caption"><a href="#"><h4>	Bản cập nhật Chrome Mobile</h4></a>
             <p class="tintop">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
@@ -145,7 +74,7 @@
       <li class="w230px">
         <div class="thumbnail">
           <div class="ankhunganh">
-            <img class="resize-anhtinright" src="images/news/mobile-website.jpg">
+            <img class="resize-anhtinright" src="${pageContext.request.contextPath}/resources/images/news/mobile-website.jpg">
             </div>
           <div class="caption">
             <a href="#"><h4>So sánh tốc độ Iphone 4</h4></a>
@@ -172,7 +101,7 @@
             <div class="news-item-c">
                 <div class="news-item">
                     <a href="#" class="img">
-                    <img title="Giảm giá 50% phụ kiện khi mua kèm máy" src="images/news/mobile_device_image3.jpg"></a>
+                    <img title="Giảm giá 50% phụ kiện khi mua kèm máy" src="${pageContext.request.contextPath}/resources/images/news/mobile_device_image3.jpg"></a>
                     <a href="#" class="title">Giảm giá 50% phụ kiện khi mua kèm máy</a><br>
                     <div class="date">
                         <span class="label-date">Cập nhật:</span> <span class="date-data">25/07/2013 09:45:10 AM</span>
@@ -195,7 +124,7 @@
             <div class="news-item-c">
                 <div class="news-item">
                     <a href="#" class="img">
-                    <img title="Giảm giá 50% phụ kiện khi mua kèm máy" src="images/product/201112311125428125_PPSL-16.png"></a>
+                    <img title="Giảm giá 50% phụ kiện khi mua kèm máy" src="${pageContext.request.contextPath}/resources/images/product/201112311125428125_PPSL-16.png"></a>
                     <a href="#" class="title">Giảm giá 50% phụ kiện khi mua kèm máy</a><br>
                     <div class="date">
                         <span class="label-date">Cập nhật:</span> <span class="date-data">26/06/2012 01:27:52 PM</span>
@@ -218,7 +147,7 @@
             <div class="news-item-c">
                 <div class="news-item">
                     <a href="#" class="img">
-                    <img title="Giảm giá 50% phụ kiện khi mua kèm máy" src="images/product/201112311125424843_PPBS-119.png"></a>
+                    <img title="Giảm giá 50% phụ kiện khi mua kèm máy" src="${pageContext.request.contextPath}/resources/images/product/201112311125424843_PPBS-119.png"></a>
                     <a href="#" class="title">Giảm giá 50% phụ kiện khi mua kèm máy</a><br>
                     <div class="date">
                         <span class="label-date">Cập nhật:</span> <span class="date-data">17/04/2012 05:32:14 PM</span>
@@ -310,7 +239,7 @@
             <div class="news-item-c">
                 <div class="news-item">
                     <a href="#" class="img">
-                    <img title="Giảm giá 50% phụ kiện khi mua kèm máy" src="images/news/mobile_device_image3.jpg"></a>
+                    <img title="Giảm giá 50% phụ kiện khi mua kèm máy" src="${pageContext.request.contextPath}/resources/images/news/mobile_device_image3.jpg"></a>
                     <a href="#" class="title">Giảm giá 50% phụ kiện khi mua kèm máy</a><br>
                     <div class="date">
                         <span class="label-date">Cập nhật:</span> <span class="date-data">25/07/2013 09:45:10 AM</span>
@@ -325,7 +254,7 @@
             <div class="news-item-c">
                 <div class="news-item">
                     <a href="#" class="img">
-                    <img title="Giảm giá 50% phụ kiện khi mua kèm máy" src="images/product/201112311125428125_PPSL-16.png"></a>
+                    <img title="Giảm giá 50% phụ kiện khi mua kèm máy" src="${pageContext.request.contextPath}/resources/images/product/201112311125428125_PPSL-16.png"></a>
                     <a href="#" class="title">Giảm giá 50% phụ kiện khi mua kèm máy</a><br>
                     <div class="date">
                         <span class="label-date">Cập nhật:</span> <span class="date-data">26/06/2012 01:27:52 PM</span>
@@ -346,7 +275,7 @@
             <div class="news-item-c">
                 <div class="news-item">
                     <a href="#" class="img">
-                    <img title="Giảm giá 50% phụ kiện khi mua kèm máy" src="images/product/201112311125424843_PPBS-119.png"></a>
+                    <img title="Giảm giá 50% phụ kiện khi mua kèm máy" src="${pageContext.request.contextPath}/resources/images/product/201112311125424843_PPBS-119.png"></a>
                     <a href="#" class="title">Giảm giá 50% phụ kiện khi mua kèm máy</a><br>
                     <div class="date">
                         <span class="label-date">Cập nhật:</span> <span class="date-data">17/04/2012 05:32:14 PM</span>

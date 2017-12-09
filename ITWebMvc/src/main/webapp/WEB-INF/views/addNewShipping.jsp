@@ -1,12 +1,7 @@
-<%-- 
-    Document   : users
-    Created on : Dec 11, 2013, 2:10:05 PM
-    Author     : Nhan
---%>
 
 <%@page import="java.util.List"%>
-<%@page import="dao.UserzDao"%>
-<%@page import="model.Userz"%>
+<%@page import="com.it.spring.dao.UserzDAO"%>
+<%@page import="com.it.spring.model.Userz"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">

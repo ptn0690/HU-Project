@@ -6,15 +6,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Mobile Service Center</title>
-<link rel="stylesheet" media="screen" href="css/bootraps/bootstrap.css" />
-<link rel="stylesheet" media="screen" href="css/bootraps/bootstrap-responsive.css" />
-<link rel="stylesheet" media="screen" href="main.css" />
-<link rel="stylesheet" media="screen" href="css/style.css" />
-<script src="js/bootraps/bootstrap.js"></script>
-<script src="js/bootraps/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="js/jquery.validate.min.js"></script>
-<script type="text/javascript" src="script/contactUs.js"></script>
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/css/bootraps/bootstrap.css" />
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/css/bootraps/bootstrap-responsive.css" />
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/main.css" />
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/css/style.css" />
+<script src="${pageContext.request.contextPath}/resources/js/bootraps/bootstrap.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/bootraps/bootstrap.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/script/contactUs.js"></script>
 
 </head>
 
@@ -27,15 +27,15 @@
 <!--MAINBODY-->
 <div class="mainbody left-fl">
 	   <div class="mainbody-content w1020px marginauto">
-           <jsp:include page="leftpanel.jsp"/>    
-            </div>
+                <jsp:include page="${request.contextPath}/category/leftpanel"></jsp:include>
+       </div>
         
         <!--Vung ben phai--><!--Vung ben phai--><!--Vung ben phai--><!--Vung ben phai--><!--Vung ben phai-->
         <div class="right-area w775px left-fl pd10">
         	
 	<!-- Start WOWSlider.com HEAD section -->
-	<link rel="stylesheet" type="text/css" href="css/wowhome.css" />
-	<script type="text/javascript" src="js/wowslider/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/wowhome.css" />
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/wowslider/jquery.js"></script>
 	<!-- End WOWSlider.com HEAD section -->
 
 
@@ -101,7 +101,7 @@
                         </fieldset>
                     </form>
                 </div>
-                 <iframe id="map" width="700" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=cong+vien+phan+mem+quang+trung&amp;ie=UTF8&amp;hq=cong+vien+phan+mem+quang+trung&amp;hnear=&amp;ll=10.858195,106.630425&amp;spn=0.011843,0.01929&amp;t=m&amp;output=embed"></iframe>
+                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1232245675747!2d106.71257741409211!3d10.80187319230425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528baead708e3%3A0xcee4d142f6409e4b!2sHutech+University!5e0!3m2!1svi!2s!4v1512861117135" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
           
             

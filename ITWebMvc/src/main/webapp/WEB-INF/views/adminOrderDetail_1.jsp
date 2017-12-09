@@ -1,22 +1,11 @@
-<%-- 
-    Document   : adminOrderDetail
-    Created on : Dec 30, 2013, 8:41:26 AM
-    Author     : Admin
---%>
-<%@page import="model.ReceiptInformation"%>
-<%@page import="model.Receipt"%>
-<%@page import="dao.ReceiptDao"%>
+<%@page import="com.it.spring.model.ReceiptInformation"%>
+<%@page import="com.it.spring.model.Receipt"%>
+<%@page import="com.it.spring.dao.ReceiptDAO"%>
 <%@page import="java.util.Date"%>
-<%-- 
-    Document   : admin
-    Created on : Dec 11, 2013, 2:00:17 PM
-    Author     : Nhan
---%>
-
-<%@page import="model.Order"%>
+<%@page import="com.it.spring.model.Order"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.OrderDao"%>
-<%@page import="dao.CartDao"%>
+<%@page import="com.it.spring.dao.OrderDAO"%>
+<%@page import="com.it.spring.dao.CartDao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -109,7 +98,7 @@ ul li ul a{
         Date cuDate = new Date();
         String orderId = request.getParameter("id");
         if(orderId!=null){
-        ReceiptDao receiptDao = new ReceiptDao();
+        ReceiptDAO receiptDao = new ReceiptDAO();
         List<Receipt> listOfReceipt = receiptDao.showReceiptByOrderId(Integer.parseInt(orderId));
         ReceiptInformation receiptInformation = receiptDao.getReceiptInformationAdmin(Integer.parseInt(orderId));
                 %> 

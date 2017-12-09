@@ -1,7 +1,7 @@
 
 <%@page import="java.util.List"%>
-<%@page import="model.Category"%>
-<%@page import="dao.CategoryDAO"%>
+<%@page import="com.it.spring.model.Category"%>
+<%@page import="com.it.spring.dao.CategoryDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -51,8 +51,8 @@ ul li ul a{
     Category category = null;
     String cat_id = request.getParameter("id");
     if(cat_id!=null){
-    CategoryDAO  categoryDAO = new CategoryDAO();
-    category = categoryDAO.findCategoryByID(Integer.parseInt(cat_id));
+    //CategoryDAO  categoryDAO = new CategoryDAO();
+    //category = categoryDAO.findCategoryByID(Integer.parseInt(cat_id));
     }
     else out.print("");
 
