@@ -69,8 +69,8 @@ public class UserzDAOImpl implements UserzDAO {
     
     
     public void insertUsers(Userz users){
-        String sql = " insert into Userz(use_firstName, use_lastName, use_username, use_password, use_phonenumber, use_address, use_email, use_isadmin, use_activecode)"+
-                " values(?,?,?,?,?,?,?,?,?) ";
+        String sql = " insert into Userz(use_firstName, use_lastName, use_username, use_password, use_phonenumber, use_address, use_email, use_isadmin, use_activecode, use_isactive)"+
+                " values(?,?,?,?,?,?,?,?,?,?) ";
         try{
             
          Connection  connection = dataSource.getConnection();
@@ -84,6 +84,7 @@ public class UserzDAOImpl implements UserzDAO {
          pst.setString(7, users.getAddress());
          pst.setInt(8, users.getIsAdmin());
          pst.setString(9, generateRandomString());
+         pst.setInt(10, 1);
          pst.execute();
             
         }catch(SQLException ex){

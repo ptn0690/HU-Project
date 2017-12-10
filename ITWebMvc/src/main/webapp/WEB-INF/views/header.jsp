@@ -41,7 +41,7 @@ Userz userz = null;
                 
                 <li><a href="${pageContext.request.contextPath}/login">Đăng nhập</a></li>
                
-                <li><a href="${pageContext.request.contextPath}/regist">Đăng ký</a></li>
+                <li><a href="${pageContext.request.contextPath}/register/">Đăng ký</a></li>
 
             </ul>
             
