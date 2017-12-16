@@ -1,34 +1,21 @@
-<%-- 
-    Document   : adminOrderDetail
-    Created on : Dec 30, 2013, 8:41:26 AM
-    Author     : Admin
---%>
-<%@page import="model.ReceiptInformation"%>
-<%@page import="model.Receipt"%>
-<%@page import="dao.ReceiptDao"%>
+<%@page import="com.it.spring.model.ReceiptInformation"%>
+<%@page import="com.it.spring.model.Receipt"%>
 <%@page import="java.util.Date"%>
-<%-- 
-    Document   : admin
-    Created on : Dec 11, 2013, 2:00:17 PM
-    Author     : Nhan
---%>
-
-<%@page import="model.Order"%>
+<%@page import="com.it.spring.model.Order"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.OrderDao"%>
-<%@page import="dao.CartDao"%>
+<%@page import="com.it.spring.dao.CartDao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Mobile Service Center</title>
-<link rel="stylesheet" media="screen" href="css/bootraps/bootstrap.css" />
-<link rel="stylesheet" media="screen" href="css/bootraps/bootstrap-responsive.css" />
-<link rel="stylesheet" media="screen" href="main.css" />
-<link rel="stylesheet" media="screen" href="css/style.css" />
-<script src="js/bootraps/bootstrap.js"></script>
-<script src="js/bootraps/bootstrap.min.js"></script>
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/css/bootraps/bootstrap.css" />
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/css/bootraps/bootstrap-responsive.css" />
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/main.css" />
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/css/style.css" />
+<script src="${pageContext.request.contextPath}/resources/js/bootraps/bootstrap.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/bootraps/bootstrap.min.js"></script>
 <style>
 ul {
 	list-style:none
@@ -107,11 +94,9 @@ ul li ul a{
     
               <%
         Date cuDate = new Date();
-        String orderId = request.getParameter("id");
-        if(orderId!=null){
-        ReceiptDao receiptDao = new ReceiptDao();
-        List<Receipt> listOfReceipt = receiptDao.showReceiptByOrderId(Integer.parseInt(orderId));
-        ReceiptInformation receiptInformation = receiptDao.getReceiptInformationAdmin(Integer.parseInt(orderId));
+        if(request.getAttribute("receiptInformation")!=null){
+        List<Receipt> listOfReceipt = (List<Receipt>) request.getAttribute("listOfReceipt");
+        ReceiptInformation receiptInformation = (ReceiptInformation) request.getAttribute("receiptInformation");
                 %> 
     
     <form action="" method="post">

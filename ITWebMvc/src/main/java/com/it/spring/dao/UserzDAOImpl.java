@@ -290,14 +290,15 @@ public class UserzDAOImpl implements UserzDAO {
       public Userz findUserzById(int useid){
            
                userz = new Userz();
-               String sql = " select use_username, use_password, use_firstName, use_lastName, use_email,use_phonenumber, use_address, use_isAdmin "+
+               String sql = " select use_id, use_username, use_password, use_firstName, use_lastName, use_email,use_phonenumber, use_address, use_isAdmin "+
                        " from Userz where use_id = " + useid;
            try {    
                Connection connection = dataSource.getConnection();
                  Statement st = connection.createStatement();
                  ResultSet rs = st.executeQuery(sql);
                  if(rs.next()){
-                    userz.setUserName(rs.getString("use_username"));
+                  userz.setId(rs.getInt("use_id"));
+                  userz.setUserName(rs.getString("use_username"));
                   userz.setPass(rs.getString("use_password"));
                   userz.setFirstName(rs.getString("use_firstName"));
                   userz.setLastName(rs.getString("use_lastName"));

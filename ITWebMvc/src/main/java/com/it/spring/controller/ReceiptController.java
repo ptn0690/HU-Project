@@ -1,5 +1,6 @@
 package com.it.spring.controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -100,5 +102,17 @@ public class ReceiptController {
 		// After save all information , the cart is deleted.
 		cartService.deleteCartCustomerByCustomerId(userz.getId());
 		return model;
+	}
+	
+	@RequestMapping(value="/detail/{id}")
+	public ModelAndView getReceipt(@PathVariable("id") int orderId) throws IOException{
+		List<Receipt> listOfReceipt = new ArrayList<Receipt>();
+		listOfReceipt = receiptService.showReceiptByOrderId(orderId);
+		ReceiptInformation receiptInformation = receiptService.getReceiptInformationAdmin(orderId);
+		ModelAndView model = new ModelAndView("adminOrderDetail");
+		model.addObject("listOfReceipt", listOfReceipt);
+		model.addObject("receiptInformation", receiptInformation);
+		return model;
+		
 	}
 }

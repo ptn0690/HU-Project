@@ -8,12 +8,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Mobile Service Center</title>
-<link rel="stylesheet" media="screen" href="css/bootraps/bootstrap.css" />
-<link rel="stylesheet" media="screen" href="css/bootraps/bootstrap-responsive.css" />
-<link rel="stylesheet" media="screen" href="main.css" />
-<link rel="stylesheet" media="screen" href="css/style.css" />
-<script src="js/bootraps/bootstrap.js"></script>
-<script src="js/bootraps/bootstrap.min.js"></script>
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/css/bootraps/bootstrap.css" />
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/css/bootraps/bootstrap-responsive.css" />
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/main.css" />
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/css/style.css" />
+<script src="${pageContext.request.contextPath}/resources/js/bootraps/bootstrap.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/bootraps/bootstrap.min.js"></script>
 <style>
 .dropbox{
 	
@@ -51,8 +51,8 @@ ul li ul a{
     Category category = null;
     String cat_id = request.getParameter("id");
     if(cat_id!=null){
-    //CategoryDAO  categoryDAO = new CategoryDAO();
-    //category = categoryDAO.findCategoryByID(Integer.parseInt(cat_id));
+    CategoryDAO  categoryDAO = new CategoryDAO();
+    category = categoryDAO.findCategoryByID(Integer.parseInt(cat_id));
     }
     else out.print("");
 

@@ -1,24 +1,17 @@
-<%-- 
-    Document   : users
-    Created on : Dec 11, 2013, 2:10:05 PM
-    Author     : Nhan
---%>
-
 <%@page import="java.util.List"%>
-<%@page import="dao.UserzDao"%>
-<%@page import="model.Userz"%>
+<%@page import="com.it.spring.model.Userz"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Mobile Service Center</title>
-<link rel="stylesheet" media="screen" href="css/bootraps/bootstrap.css" />
-<link rel="stylesheet" media="screen" href="css/bootraps/bootstrap-responsive.css" />
-<link rel="stylesheet" media="screen" href="main.css" />
-<link rel="stylesheet" media="screen" href="css/style.css" />
-<script src="js/bootraps/bootstrap.js"></script>
-<script src="js/bootraps/bootstrap.min.js"></script>
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/css/bootraps/bootstrap.css" />
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/css/bootraps/bootstrap-responsive.css" />
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/main.css" />
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/css/style.css" />
+<script src="${pageContext.request.contextPath}/resources/js/bootraps/bootstrap.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/bootraps/bootstrap.min.js"></script>
 <style>
 ul {
 	list-style:none
@@ -59,14 +52,12 @@ ul li ul a{
 
 <div style="margin-left: 30%">
 <%
-    String id = request.getParameter("id");
-    if(id!=null){
-        UserzDao userzDao = new UserzDao();
-        Userz userz = userzDao.findUserzById(Integer.parseInt(id));
+    if(request.getAttribute("user")!=null){
+        Userz userz = (Userz) request.getAttribute("user");
 %>
-    		<form action="AddNewOrUpdateUserServlet" method="post">
+    		<form action="${pageContext.request.contextPath}/user/addProcess" method="post" enctype="application/x-www-form-urlencoded">
 			<table style="width: 75%">
-                            <input type="hidden" name="id" value="<%=id%>"/>
+                            <input type="hidden" name="id" value="<%=userz.getId()%>"/>
 				<tr style="width: 20%">
                                     <td>Username:</td> 
                                     <td> <input type="text" name="usernametxt" value="<%=userz.getUserName()%>"/></td>

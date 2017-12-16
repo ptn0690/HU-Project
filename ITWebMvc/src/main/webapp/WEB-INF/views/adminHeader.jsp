@@ -69,12 +69,12 @@
                     <a href="admin.jsp">Product</a>
                     <ul>
                     	<li><a href="admin.jsp">Edit Product &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-                    	<li><a href="editProductType.jsp">Edit Product type</a></li>
+                    	<li><a href="${pageContext.request.contextPath}/category/edit">Edit Product type</a></li>
                     </ul>
                     </li>
-                    <li><a href="cartAdmin.jsp">Orders</a></li>
+                    <li><a href="${pageContext.request.contextPath}/admin/order">Orders</a></li>
                     
-                    <li><a href="users.jsp">User</a></li>
+                    <li><a href="${pageContext.request.contextPath}/user/edit">User</a></li>
                     
                     <li><a href="adminStatisticPage.jsp">Stastitic</a></li>
                     

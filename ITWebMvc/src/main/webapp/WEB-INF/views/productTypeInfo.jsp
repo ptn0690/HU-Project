@@ -1,20 +1,25 @@
-
-
-<%-- <%@page import="java.util.List"%>
-<%@page import="model.Category"%>
-<%@page import="dao.CategoryDAO"%> --%>
+<%@page import="java.util.List"%>
+<%@page import="com.it.spring.model.Category"%>
+<%@page import="com.it.spring.dao.CategoryDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Mobile Service Center</title>
-<link rel="stylesheet" media="screen" href="css/bootraps/bootstrap.css" />
-<link rel="stylesheet" media="screen" href="css/bootraps/bootstrap-responsive.css" />
-<link rel="stylesheet" media="screen" href="main.css" />
-<link rel="stylesheet" media="screen" href="css/style.css" />
-<script src="js/bootraps/bootstrap.js"></script>
-<script src="js/bootraps/bootstrap.min.js"></script>
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/css/bootraps/bootstrap.css" />
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/css/bootraps/bootstrap-responsive.css" />
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/main.css" />
+<link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/resources/css/style.css" />
+<script src="${pageContext.request.contextPath}/resources/js/bootraps/bootstrap.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/bootraps/bootstrap.min.js"></script>
+<script>
+	function turnBack(){
+		var contextPath = "${pageContext.request.contextPath}";
+		window.location = contextPath + "/category/edit";
+	}
+</script>
+
 <style>
 .dropbox{
 	
@@ -48,16 +53,13 @@ ul li ul a{
 
 </style>
 </head>
-<%-- <%  
-    Category category = null;
-    String cat_id = request.getParameter("id");
-    if(cat_id!=null){
-    CategoryDAO  categoryDAO = new CategoryDAO();
-    category = categoryDAO.findCategoryByID(Integer.parseInt(cat_id));
-    }
-    else out.print("");
-
-%> --%>
+<%
+	Category category = null;
+	if (request.getAttribute("category") != null) {
+		category = (Category)request.getAttribute("category");
+	} else
+		out.print("");
+%>
 <body>
 <!--HEADRER-->
 <jsp:include page="adminHeader.jsp"/>
@@ -68,15 +70,15 @@ ul li ul a{
  <div class="productDetail">
  <!--Product detail-->
  
-    		<form action="CategoryUpdateServlet" method="post">
-                    <input type="hidden" value="<%-- <%=cat_id%> --%>"name="cat_id"/>
+    		<form action="${pageContext.request.contextPath}/category/addProcess" method="post" enctype="application/x-www-form-urlencoded">
+                    <input type="hidden" value="<%= category != null ? category.getCat_id() : ""%>"name="cat_id"/>
                     <table align="center">
                         <tr align="center">
-                            <td>Name:<input type="text" name="cat_name" value="<%-- <%= category != null ? category.getCat_name() : ""%> --%>"/></td>
+                            <td>Name:<input type="text" name="cat_name" value="<%= category != null ? category.getCat_name() : ""%>"/></td>
                         </tr>
                         <tr align="center">
-                            <td ><input type="submit" name="updateButton" value="Update"/>
-                                <input type="submit" name="backButton" value="Back"/></td>
+                            <td ><input type="submit" name="updateButton" value="<%= category != null ? "Cập Nhật" : "Tạo Mới"%>"/>
+                                <input type="button" name="backButton" value="Quay Lại" onlick = "turnBack()"/></td>
                         </tr>
                     </table>
 			</form>
